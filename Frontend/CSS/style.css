@@ -54,3 +54,40 @@
 .dropdown a:hover {
     background-color: hsl(0, 0%, 80%);
 }
+
+body {
+    margin: 0;
+}
+
+main {
+    margin: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.navbar ul {
+    list-style-type: none;
+    background-color: hsl(0, 0%, 80%);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    text-align: center;
+}
+
+.navbar a:hover {
+    background-color: hsl(0, 0%, 70%);
+    cursor: pointer;
+}
+
+.navbar li {
+    float: left;
+}
