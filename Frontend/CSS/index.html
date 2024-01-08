@@ -10,5 +10,79 @@
     
     <div class="box" id="box1">Box1</div>
     <div class="box" id="box2">Box2</div>
+
+    <!-- Float property allows elements to float around -->
+
+    <!-- overflow = sets desired behavior when content does not fit in the parent element box
+        
+        overflow: visible - default value. Content is not clipped when it proceeds outside its box
+        overflow: hidden - Content is clipped when it proceeds outside its box
+        overflow: scroll - Content is clipped when it proceeds outside its box. Scrollbars are added to see the rest of the content
+        overflow: auto - Similar to scroll, but scrollbars are only added when necessary
+    -->
+
+    <!--
+        display = property specifies if/how an element is displayed
+
+        block-level = start on new line, take up full width (h1, div, p, form, header, footer)
+
+
+        inline = do not start on new line, take up only necessary width (span, a, img, input, button)
+        width and height does not apply
+
+        display: block - element is displayed as a block-level element
+        display: inline - element is displayed as an inline-level element
+        display: inline-block - element is displayed as an inline-level block container. The element itself is formatted as an inline element, but you can apply height and width values
+        display: none - element is completely removed
+    -->
+
+    <!--
+        position
+            relative = positioned relative to where it normally would be
+            fixed = positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled
+            absolute = positioned relative to the nearest positioned ancestor 
+            sticky = positioned based on the user's scroll position. 
+            static = default value. Positioned according to the normal flow of the page
+
+    div {
+        position: relative;
+        left: 30px;
+        top: 40px;
+        /* move 30px to the right and 40px down */
+    }
+
+    div {
+        position: fixed;
+        right: 0px;
+        top: 0px;
+        /* position div to the top right corner of the viewport */
+    -->
+
+    <!--
+        Combinators = explains the relationship between listed selectors
+        > = child
+        + = adjacent sibling -> next direct sibling
+        ~ = general sibling -> all siblings
+          = descendant (not all descendants are children)
+    -->
+
+    <!--
+        Psuedo class = modify the state of an element
+        :hover = when the user hovers over the element
+        :active = when the element is being activated by the user
+        :focus = when the element has focus
+        :visited = when the element has been visited
+    -->
+
+    <!--
+        psuedo elements = style certain parts of an element
+        ::first-line = style the first line of text in an element
+        ::first-letter = style the first letter of text in an element
+        ::before = insert content before the content of an element
+        ::after = insert content after the content of an element
+    -->
+
+    
+
 </body>
 </html>
