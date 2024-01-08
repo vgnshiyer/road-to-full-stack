@@ -2,20 +2,35 @@
     box-sizing: border-box; /* when calculating width, include padding and border */
 }
 
+.container {
+    display: flex;
+    border: 10px solid black;
+    height: 90vh;
+}
+
 .box {
     border: 5px solid;
     font-size: 5em;
-    width: 250px;
-    height: 250px;
+    border-radius: 15px;
+    text-align: center;
+    width: 150px;
+    height: 150px;
 }
 
 #box1 {
     background-color: red;
-    margin: auto; /* # stay at the center */
 }
 
 #box2 {
     background-color: blue;
+}
+
+#box3 {
+    background-color: green;
+}
+
+#box4 {
+    background-color: yellow;
 }
 
 .dropdown {
@@ -138,3 +153,4 @@ footer {
         width: 100%;
     }
 }
+
