@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box; /* when calculating width, include padding and border */
+}
+
 .box {
     border: 5px solid;
     font-size: 5em;
@@ -67,6 +71,11 @@ h1 {
     text-align: center;
 }
 
+.navbar {
+    background-color: black;
+    height: 50px
+}
+
 .navbar ul {
     list-style-type: none;
     background-color: hsl(0, 0%, 80%);
@@ -90,4 +99,42 @@ h1 {
 
 .navbar li {
     float: left;
+}
+
+header {
+    background-color: hsl(0, 0%, 80%);
+    text-align: center;
+    padding: 25px;
+}
+
+aside {
+    width: 20%;
+    float: left;
+    padding: 10px;
+}
+
+section {
+    width: 40%;
+    float: left;
+    padding: 10px;
+}
+
+article {
+    width: 40%;
+    float: left;
+    padding: 10px;
+}
+
+footer {
+    display: block;
+    clear: both;
+    background-color: black;
+    text-align: center;
+    padding: 25px;
+}
+
+@media screen and (max-width:600px) {
+    aside, section, article {
+        width: 100%;
+    }
 }
