@@ -302,3 +302,94 @@ try{
 } catch(e) {
     console.log(e.message);
 }
+
+// asynchronous programming allows other instructions to run while other instructions are being executed
+
+console.log('one');
+setTimeout(() => {
+    console.log('Hello');
+}, 1000); // prints hello after 1 second
+console.log('two'); // does not wait for setTimeout to finish -> prints two before hello
+
+// callbacks -> functions that are passed as parameters to other functions
+
+function printMessage(msg, callback) {
+    console.log(msg);
+    callback();
+}
+
+printMessage('one', () => {
+    console.log('two');
+});
+
+// callback hell -> when we have multiple nested callbacks
+
+function printData(data, callback) {
+    setTimeout(() => {
+        console.log(data);
+        if (callback) callback();
+    }, 1000);
+}
+
+printData('one', () => {
+    console.log('printing data two');
+    printData('two', () => {
+        console.log('printing data three');
+        printData('three');
+    });
+});
+// pyramid of doom
+
+// promises -> object that represents the eventual completion or failure of an asynchronous operation
+// It is a solution to callback hell
+
+let promise = new Promise((resolve, reject) => {
+    console.log('Promise started');
+    setTimeout(() => {
+        resolve('Promise resolved');
+    }, 1000);
+});
+
+function getData(data) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(`Promise resolved with ${data}`);
+        }, 1000);
+    });
+}
+
+// states of a promise
+// pending -> initial state
+// fulfilled -> operation completed successfully [resolve]
+// rejected -> operation failed [reject]
+
+console.log(promise);
+
+promise.then((data) => {
+    console.log(data); // prints Promise resolved if fulfilled
+});
+
+promise.catch((error) => {
+    console.log(error); // prints error if rejected
+});
+
+let promise1 = getData('one');
+console.log(promise1);
+promise1.then((data) => {
+    console.log(data);
+});
+
+// chaining promises -> alternative to callback hell
+
+getData('one')
+    .then((data) => {
+        console.log(data);
+        getData('two')
+            .then((data) => {
+                console.log(data);
+                getData('three')
+                    .then((data) => {
+                        console.log(data);
+                    });
+            });
+    });
