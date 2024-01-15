@@ -408,4 +408,20 @@ async function getDataFromApi() {
     console.log(data);
 }
 
-getDataFromApi();
+// getDataFromApi();
+
+// IIFE -> Immediately Invoked Function Expression
+
+(async () => {
+    let data = await getData(1);
+    console.log(data);
+    data = await getData('two');
+    console.log(data);
+})();
+
+(async function() {
+    let data = await getData('one');
+    console.log(data);
+    data = await getData('two');
+    console.log(data);
+})();
