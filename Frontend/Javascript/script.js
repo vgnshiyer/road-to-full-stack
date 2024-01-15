@@ -425,3 +425,13 @@ async function getDataFromApi() {
     data = await getData('two');
     console.log(data);
 })();
+
+// fetch -> used to make http requests
+
+let URL = 'https://cat-fact.herokuapp.com/facts';
+
+(async () => {
+    let response = await fetch(URL); // this returns a promise
+    let data = await response.json(); // this returns a second promise
+    console.log(data[0].text);
+})();
