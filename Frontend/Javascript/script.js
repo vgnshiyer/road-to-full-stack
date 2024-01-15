@@ -393,3 +393,19 @@ getData('one')
                     });
             });
     });
+
+// async await -> alternative to chaining promises
+
+// async function always returns a promise
+// awat keyword can only be used inside an async function
+// await keyword waits for the promise to be resolved or rejected
+// it pauses the execution of the async function until the promise is resolved or rejected
+
+async function getDataFromApi() {
+    let data = await getData('one');
+    console.log(data);
+    data = await getData('two');
+    console.log(data);
+}
+
+getDataFromApi();
