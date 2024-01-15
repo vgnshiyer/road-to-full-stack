@@ -8,17 +8,17 @@ const student = {
     age: 16,
 }
 
-console.log(student);
+console.log(student); // this is an object
 
 console.log(typeof student);
 
-console.log(student.name);
+console.log(student.name); // dot notation -> prints John Doe
 
-console.log(student['name']);
+console.log(student['name']); // bracket notation -> prints John Doe
 
-student.name = 'Jane Doe';
+student.name = 'Jane Doe'; 
 
-console.log(student.name);
+console.log(student.name); // prints Jane Doe
 
 const product = {
     title: "Ball Pen",
@@ -65,7 +65,7 @@ for (let c of 'Hello World') {
     console.log(c);
 }
 
-// for-in loop -> iterate over objects
+// for-in loop -> iterate over object
 for (let key in student) {
     console.log("key =", key, "value =", student[key]);
 }
@@ -110,15 +110,15 @@ for (let item of items) {
 
 items.push('Marker');
 console.log(items);
-let popped = items.pop();
+let popped = items.pop(); // removes the last element and returns it
 console.log(items);
 console.log(popped);
-items.unshift('Marker');
+items.unshift('Marker'); // adds an element to the beginning of the array
 console.log(items);
-let shifted = items.shift();
+let shifted = items.shift(); // removes the first element and returns it
 console.log(items);
 console.log(shifted);
-items.splice(1, 2);
+items.splice(1, 2); // start, deleteCount
 console.log(items);
 items.splice(1, 0, 'Pencil', 'Eraser'); // start, deleteCount, items to add (comma separated)
 console.log(items);
@@ -146,3 +146,159 @@ let sum3 = (a, b) => a + b;
 console.log(sum3(1, 2));
 
 console.log(sum1, sum2, sum3);
+
+let arr = ["pune", "mumbai", "delhi", "chennai", "kolkata"];
+
+// we pass a function as a parameter to the forEach function
+// forEach is called a higher order function -> function that takes another function as a parameter or returns a function
+// the function we pass to forEach is called a callback function
+arr.forEach((city, index) => {
+    console.log(index, city);
+});
+
+let arr1 = [1, 2, 3, 4, 5];
+
+// map -> returns a new array with the same number of elements as the original array
+arr1.forEach((num) => console.log(num ** 2));
+
+let newarr = arr1.map((num) => num ** 2);
+
+console.log(newarr);
+
+// difference between map and forEach
+// map returns a new array
+// forEach does not return anything
+
+// filter -> returns a new array with only those elements that satisfy the condition
+let evenArr = arr1.filter((num) => num % 2 === 0);
+
+console.log(evenArr);
+
+// reduce -> returns a single value
+let sumArr = arr1.reduce((acc, num) => acc + num, 10); // with initial value
+
+console.log(sumArr);
+
+let smallest = arr1.reduce((acc, num) => acc < num ? acc : num, Infinity);
+
+console.log(smallest);
+
+// Js object has a special property called __proto__ which points to the prototype object
+const employee = {
+    calculateSalary: function() {
+        return 10000;
+    }
+}
+
+const john = {
+    name: 'John Doe',
+    age: 16,
+    __proto__: employee
+}
+
+console.log(john.name);
+console.log(john.age);
+console.log(john.calculateSalary());
+
+// if object and prototype have same property, object property is used
+
+class Toyota {
+    constructor(color) {
+        console.log('Toyota constructor called');
+
+        this.color = color;
+    }
+
+    start () {
+        console.log('Toyota started');
+    }
+
+    stop () {
+        console.log('Toyota stopped');
+    }
+
+    setColor(color) {
+        this.color = color;
+    }
+}
+
+let car = new Toyota('purple');
+car.start();
+car.stop();
+console.log(car.color);
+car.setColor('red');
+console.log(car.color);
+
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+
+    printName() {
+        console.log(this.name);
+    }
+}
+
+class Boy extends Person{
+    constructor(name, age) {
+        super(name);
+        this.name = name;
+        this.age = age;
+    }
+
+    printAge() {
+        console.log(this.age);
+    }
+}
+
+let person = new Person('John Doe');
+person.printName();
+
+let boy = new Boy('John', 16);
+boy.printName(); // parent function invoked
+boy.printAge(); // child function invoked
+
+// Boy.prototype.printName = function() {
+//     console.log('Hello');
+// }
+
+boy.printName(); // child function invoked
+
+console.log(boy.__proto__)
+
+class User {
+    constructor(name, email) {
+        this.name = name;
+        this.email = email;
+    }
+
+    viewData() {
+        console.log(`User ${this.name} viewed data`);
+    }
+}
+
+class Admin extends User {
+    constructor(name, email) {
+        super(name, email);
+    }
+
+    viewData() {
+        console.log(`Admin ${this.name} viewed data`);
+    }
+}
+
+let user = new User('shakaal', 'shakaal@darinda.com');
+user.viewData();
+let admin = new Admin('gabbar', 'gabbar@darinda.com');
+admin.viewData();
+
+let x = 1;
+let y = 0;
+try{
+    if (y === 0) {
+        throw new Error('y cannot be zero');
+    }
+    console.log(x / y);
+} catch(e) {
+    console.log(e.message);
+}
