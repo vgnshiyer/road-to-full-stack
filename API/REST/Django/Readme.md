@@ -48,7 +48,7 @@ REST API framework written in python.
 - finally add app to installed apps
 - run `makemigrations` -->  makes migration files based on changes to models --> used by django to track changes to schema
 - run `migrate` --> applies the changes tracked in the migration file to the database --> can also be used to undo changes to db schema
-
+- admin panel is used to manage the data in the database and to manage the users of the system
 
 Model --> Data models
 Serializers --> convert data
