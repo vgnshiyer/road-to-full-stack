@@ -28,6 +28,8 @@ DEBUG = True
 # host allowed : ['*'] for all
 ALLOWED_HOSTS = []
 
+# This file is like pom.xml or build.gradle in Java, or package.json in Node.js.
+# It contains the configuration for the Django project.
 
 # Application definition
 
@@ -38,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'api',
 ]
 
 MIDDLEWARE = [
