@@ -1,0 +1,53 @@
+- hosts: all # all group (can be replaced with a specific group, can also be a single host or a wildcard)
+  become: yes # run the tasks as root
+
+tasks:
+  - name: Install Apache
+    yum:
+      name: httpd
+      state: present
+  - name: Copy configuration file
+    copy:
+      src: httpd.conf
+      dest: /etc/httpd/conf/httpd.conf
+  - name: Copy virtual hosts file
+    copy:
+      src: httpd-vhosts.conf
+      dest: /etc/httpd/conf.d/httpd-vhosts.conf
+  - name: Start Apache
+    service:
+      name: httpd
+      state: started
+      enabled: yes
+  - name: Enable Apache
+    command: chkconfig httpd on
+
+---
+
+- hosts: all
+  become: yes
+
+tasks:
+  - name: Install Apache
+    yum:
+      name:
+        - httpd
+        - httpd-devel
+      state: present
+  - name: Copy config files
+    copy:
+      src: "{{ item.src }}"
+      dest: "{{ item.dest }}"
+      owner: root
+      group: root
+      mode: 0644
+    with_items:
+      - src: httpd.conf
+        dest: /etc/httpd/conf/httpd.conf
+      - src: httpd-vhosts.conf
+        dest: /etc/httpd/conf.d/httpd-vhosts.conf
+  - name: Start Apache
+    service:
+      name: httpd
+      state: started
+      enabled: yes
