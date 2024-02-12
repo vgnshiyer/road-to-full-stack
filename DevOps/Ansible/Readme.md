@@ -45,3 +45,23 @@ Config file with a list of tasks. Written in yaml.
 
 pass variables with `-e "key=value, key=value"`
 pass inventory file `-i`
+
+You can run tasks selectively with the help of tags.
+- `--tags`
+- `--skip-tags`
+
+You can import tasks from other playbooks.
+- `import_tasks: foo.yml`
+  `tags: foo`
+Give it a tag to execute selectively.
+
+if you want to dynamically import tasks, use `include_tasks` instead
+
+Blocks can be used to group related tasks.
+`blocks` + `rescue` + `always` -> act like try catch finally
+
+Ansible set_fact is used to dynamically update variables while register is used only to store data in a variable.
+
+Roles provide an easy way to organize ansible infrastructure. Ansible looks for main.yml files inside tasks in the roles directory.
+
+Handlers are used to handle events --> called via `notify` option
