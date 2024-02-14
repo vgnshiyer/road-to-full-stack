@@ -3,14 +3,14 @@ import './App.css';
 import {useEffect, useState} from 'react'
 import axios from 'axios';
 
-const fetchRandomData = async (url, page) => {
-  try {
-    if (page) url += `?page=${page}`
-    const res = await axios.get(url);
+const fetchRandomData = async (url, page=0) => {
+  return axios.get(`${url}?page=${page}`)
+  .then((res) => {
     return res;
-  } catch (err) {
-    console.log(err);
-  }
+  })
+  .catch((err) => {
+    return err;
+  })
 }; 
 
 function App() {
@@ -22,11 +22,16 @@ function App() {
   // ?page=2
 
   const fetchData = async (pageNumber = null) => {
-    const data = await fetchRandomData(url, pageNumber || 0);
-    setResult(JSON.stringify(data, null, 2) || 'No user found');
-    if (data === null || data === undefined) return;
-    setUserInfos([...userInfos, ...data.data.results]);
-    console.log(userInfos);
+    fetchRandomData(url, pageNumber)
+    .then((data) => {
+      setResult(JSON.stringify(data, null, 2) || 'No user found');
+      if (data === null || data === undefined) return;
+      setUserInfos([...userInfos, ...data.data.results]);
+      console.log(userInfos);
+    })
+    .catch((err) => {
+      console.error(err);
+    })
   }
 
   useEffect(() => {
