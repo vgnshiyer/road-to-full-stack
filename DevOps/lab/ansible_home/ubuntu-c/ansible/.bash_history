@@ -78,3 +78,6 @@ apt-get install -y traceroute
 apt-get install traceroute
 sudo su
 clear
+ll
+sudo su
+exit

@@ -1,105 +1,3 @@
-vim apache-server.yml 
-vim apache-server.yml 
-clear
-ansible-playbook apache-server.yml
-curl ubuntu1
-curl ubuntu3
-curl ubuntu2
-clear
-vim apache-server.yml 
-ansible-playbook apache-server.yml
-vim apache-server.yml 
-ansible-playbook apache-server.yml
-vim index.html
-clear
-vim apache-server.yml 
-vim apache-server.yml 
-ansible-playbook apache-server.yml
-curl ubuntu1
-vim apache-server.yml 
-ansible-playbook apache-server.yml
-curl ubuntu1
-clear
-ll
-cd ..
-ll
-cd playbooks/
-ll
-mkdir apache-server-example
-mv . ./apache-server-example/
-mv apache-server.yml index.html ./apache-server-example/
-ll
-cd apache-server-example/
-ll
-clear
-cd ..
-cd ..
-clear
-ll
-ln playbooks/ /home/ansible/playbooks
-rsync -a playbooks/ /home/ansible/playbooks
-apt-get rsync
-apt-get install rsync
-rsync -a playbooks/ /home/ansible/playbooks
-clear
-ll
-cd playbooks/
-clear
-vim /etc/ansible/hosts 
-clear
-ll
-mkdir node-server-example
-ll
-cd node-server-example/
-ll
-clear
-vim app.js
-vim package.json
-cat package.json 
-clear
-vim playbook.yml
-ansible-playbook playbook.yml 
-vim playbook.yml 
-ansible-playbook playbook.yml 
-cd ..
-cd ..
-rsync -a playbooks/ /home/ansible/playbooks
-clear
-cd playbooks/
-cd node-server-example/
-clear
-vim /etc/ansible/hosts 
-clear
-vim playbook.yml 
-vim playbook.yml 
-ansible-playbook playbook.yml 
-ansible-playbook playbook.yml 
-apt-get install nodejs
-vim playbook.yml 
-apt-get install nodejs
-ansible-playbook playbook.yml 
-vim playbook.yml 
-ansible-playbook playbook.yml 
-ansible-playbook playbook.yml 
-vim playbook.yml 
-clear
-vim package.json 
-ansible-playbook playbook.yml 
-clear
-vim app.js 
-vim package.json 
-clear
-ansible-playbook playbook.yml 
-curl ubuntu2
-curl ubuntu3
-curl ubuntu3:3000
-clear
-ssh ubuntu3
-ansible-playbook playbook.yml 
-vim playbook.yml 
-ansible-playbook playbook.yml 
-cat package.json 
-vim package.json 
 vim playbook.yml 
 clear
 ansible-playbook playbook.yml 
@@ -497,4 +395,106 @@ clear
 iptables
 clear
 ifconfig
+exit
+clear
+cd ~
+cd a/b/
+clear
+ll
+alias ll="ls -lrth"
+clear
+ll
+echo "Hello World" >> c
+claer
+clear
+ll
+cat c
+clear
+grep "Hello" c
+grep -w "Hello" c
+grep -w "Hellow" c
+grep -w "Hell" c
+grep "Hell" c
+grep "hell" c
+grep -i "hell" c
+grep -wi "hello world" c
+grep -win "hello world" c
+grep -win -B "hello world" c
+grep -win -B 4 "hello world" c
+grep -win -B 4 -A 4 "hello world" c
+echo "asda" >> c
+grep -win -B 4 -A 4 "hello world" c
+grep -win -C 4 "hello world" c
+grep -win -C 2 "hello world" c
+grep -win -C 1 "hello world" c
+clear
+grep -win -C 1 "hello world" .
+grep -win -C 1 "hello world" *
+..
+cd ..
+clear
+grep -win -C 1 "hello world" *
+grep -winr -C 1 "hello world" *
+grep -winr -C 1 "hello world" *
+grep -wirl -C 1 "hello world" *
+grep -wirl "hello world" *
+grep -wirlc "hello world" *
+grep -wirc "hello world" *
+history | grep "commit"
+history | grep "commit" | grep "dotfile"
+color
+apt-get install color
+clear
+grep "..... ....."
+grep "..... ....." *
+grep -r "..... ....." *
+grep -wr "..... ....." *
+grep -wrn "..... ....." *
+grep -wrn "..... ....." *
+grep -V
+clear
+grep -r "[a-zA-Z]{5}"
+grep -Pr "[a-zA-Z]{5}"
+grep -wPr "[a-zA-Z]{5}"
+grep -wPrn "[a-zA-Z]{5}"
+grep -wPrc "[a-zA-Z]{5}"
+grep -wPrn "[a-zA-Z]{5} [a-zA-Z]{5}"
+grep -wPirn "[a-zA-Z]{5} [a-zA-Z]{5}"
+grep -wPirn ".{5} [a-zA-Z]{5}"
+grep -wPirn ".{5} .{5}"
+clear
+cd ..
+clear
+clear
+find c
+find . c
+find . -type d c
+find . -type d
+find . -type f
+find . -type f -name c
+clear
+find . -type f -name "c"
+find . -type f -name "c*"
+find . -type d -name "c*"
+find . -type d -name "*c*"
+find . -type f -name "*c*"
+clear
+grep -rP "(hH)"
+grep -rP "(hH)*"
+cd a
+clear
+grep -rP "(hH)*"
+grep -rP "(hH)+.*"
+grep -rP "(hH)+"
+grep -rP "(hH)+."
+grep -rP "(hH)+.*"
+grep -rP "(hH).*"
+grep -rP "(hH)*"
+clear
+find . -size -5M
+find . -size -5k
+find . -size -5K
+find . -size -5k
+find . -perm 650
+clear
 exit
