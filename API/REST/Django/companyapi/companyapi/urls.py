@@ -23,4 +23,5 @@ urlpatterns = [
     path('home/', home_page),
     path('api/v1/', include('api.urls')),
     path('api/v1/', include('randomfactapi.urls')),
+    path('api/v1/', include('studentapi.urls')),
 ]

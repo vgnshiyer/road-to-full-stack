@@ -55,3 +55,5 @@ Model --> Data models
 Serializers --> convert data
 Views/ViewSet --> binds models and serializers
 urls --> rest_framework.default router -> provides all http methods for base url (eg. 'companies')
+
+* In a one to many relationship, add a foriegn key on the many side of the relation.
